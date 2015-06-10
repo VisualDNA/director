@@ -193,6 +193,8 @@ Router.prototype.init = function (r) {
       dloc.hash = r;
     } else if (!dlocHashEmpty()) {
       self.dispatch('on', '/' + dloc.hash.replace(/^(#\/|#|\/)/, ''));
+    } else {
+      self.dispatch('on', self.getPath());
     }
   }
   else {
